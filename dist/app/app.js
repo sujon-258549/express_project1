@@ -7,7 +7,12 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.text());
-app.get('/', (req, res) => {
+//  madel wore use 
+const varifay = (req, res, next) => {
+    console.log(req.url, req.method, req.body, req.params, req.query);
+    next();
+};
+app.get('/', varifay, (req, res) => {
     console.log(req.params);
     console.log(req.query.email);
     res.send('Hello World Sujon mia sujon!');
