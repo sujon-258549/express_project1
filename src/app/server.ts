@@ -1,8 +1,6 @@
 
 import { Server } from 'http';
 import app from '../app/app';
-
-
 const PORT = 5000;
 let server : Server;
 
